@@ -117,6 +117,7 @@ h1 {
   margin-bottom: 15px;
   border-left: 4px solid #667eea;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .type-item:hover {
@@ -133,6 +134,12 @@ h1 {
   color: #667eea;
   font-size: 1.15em;
   margin-bottom: 10px;
+  filter: blur(5px);
+  transition: filter 0.3s ease;
+}
+
+.type-item.active .type-name {
+  filter: blur(0);
 }
 
 .type-description {
@@ -146,6 +153,8 @@ h1 {
   font-size: 0.9em;
   font-style: italic;
   margin-bottom: 8px;
+  filter: blur(5px);
+  transition: filter 0.3s ease;
 }
 
 .type-example {
@@ -155,6 +164,13 @@ h1 {
   color: #2d3748;
   font-size: 0.95em;
   border-left: 3px solid #48bb78;
+  filter: blur(5px);
+  transition: filter 0.3s ease;
+}
+
+.type-item.active .type-article,
+.type-item.active .type-example {
+  filter: blur(0);
 }
 
 .example-label {

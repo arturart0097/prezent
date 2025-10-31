@@ -1,4 +1,25 @@
+import { useEffect } from "react";
+
 function App() {
+  useEffect(() => {
+    const items = document.querySelectorAll(".type-item");
+
+    const handleClick = function () {
+      this.classList.toggle("active");
+    };
+
+    items.forEach((item) => {
+      item.addEventListener("click", handleClick);
+    });
+
+    // Cleanup function
+    return () => {
+      items.forEach((item) => {
+        item.removeEventListener("click", handleClick);
+      });
+    };
+  }, []);
+
   return (
     <div class="container">
       <h1>🕐 Види строків за Цивільним кодексом України</h1>
@@ -277,9 +298,10 @@ function App() {
         </div>
       </div>
       <br />
+      <br />
       <hr />
       <br />
-      <h1>Виконала: Пряха Каріна 2-20</h1>
+      <h1>Виконала: Пряха Каріна 2-22</h1>
     </div>
   );
 }
